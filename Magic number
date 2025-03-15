@@ -1,0 +1,33 @@
+
+#include <stdio.h>
+int reverse(int n) {
+    int rev = 0;
+    while (n != 0) {
+        rev = rev * 10 + n % 10;
+        n /= 10;
+    }
+    return rev;
+}
+
+int sum_of_digits(int n) {
+    int sum = 0;
+    while (n != 0) {
+        sum += n % 10;
+        n /= 10;
+    }
+    return sum;
+}
+
+int main() {
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    int sum = sum_of_digits(num);
+    int rev = reverse(sum);
+    if (sum * rev == num) {
+        printf("Magic number\n");
+    } else {
+        printf("Not a magic number\n");
+    }
+    return 0;
+}
