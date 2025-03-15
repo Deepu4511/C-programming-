@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int reverse(int n) {
+    int rev = 0;
+    while (n != 0) {
+        rev = rev * 10 + n % 10;
+        n /= 10;
+    }
+    return rev;
+}
+
+int main() {
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    int square = num * num;
+    int rev = reverse(num);
+    int rev_square = rev * rev;
+    if (square == reverse(rev_square)) {
+        printf("Adam number\n");
+    } else {
+        printf("Not an Adam number\n");
+    }
+    return 0;
+}
